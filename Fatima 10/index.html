@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Her Special Day</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-noise"></div>
+  <div id="heartLayer" class="heart-layer" aria-hidden="true"></div>
+
+  <audio id="bgm" src="assets/bgm.mp3" loop preload="auto"></audio>
+
+  <div id="audioPrompt" class="audio-prompt hidden">
+    <button id="audioBtn" class="btn btn-small">Tap to enable music</button>
+  </div>
+
+  <div id="photoModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <img id="modalImg" src="" alt="Preview" />
+      <div id="modalCaption" class="modal-caption"></div>
+    </div>
+  </div>
+
+  <main class="site">
+    <section class="page active" data-page="1" id="page1">
+      <div class="page-inner hero-page">
+        <p class="eyebrow">counting the days</p>
+        <h1 class="title main-title">Her Special Day</h1>
+        <p class="subtitle">is coming</p>
+
+        <div class="countdown-shell">
+          <div class="countdown-grid" aria-label="countdown">
+            <div class="count-box"><span id="d">00</span><small>days</small></div>
+            <div class="count-box"><span id="h">00</span><small>hours</small></div>
+            <div class="count-box"><span id="m">00</span><small>minutes</small></div>
+            <div class="count-box"><span id="s">15</span><small>second</small></div>
+          </div>
+        </div>
+
+        <button id="giftBtn1" class="btn btn-primary btn-locked" disabled>open your gift</button>
+        <p class="microcopy">Wait for the countdown, then press the button.</p>
+      </div>
+    </section>
+
+    <section class="page" data-page="2" id="page2">
+      <div class="page-inner centered">
+        <p class="eyebrow top-phrase">there's something for you</p>
+        <div id="giftBox1" class="gift-box gift-box-large" role="button" tabindex="0" aria-label="Open gift">
+          <div class="gift-shadow"></div>
+          <div class="gift-body"></div>
+          <div class="gift-ribbon gift-ribbon-v"></div>
+          <div class="gift-ribbon gift-ribbon-h"></div>
+          <div class="gift-lid"></div>
+          <div class="gift-sparkles"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" data-page="3" id="page3">
+      <div class="page-inner split-page">
+        <div class="side-gallery left">
+          <div class="gallery-column">
+            <img class="floating-photo" src="assets/fatima1.jpg" alt="Fatima 1" />
+            <img class="floating-photo" src="assets/fatima2.jpg" alt="Fatima 2" />
+            <img class="floating-photo" src="assets/fatima3.jpg" alt="Fatima 3" />
+            <img class="floating-photo" src="assets/fatima4.jpg" alt="Fatima 4" />
+          </div>
+        </div>
+
+        <div class="center-copy">
+          <h2 class="title page-title">Your</h2>
+          <h3 class="title page-title-accent">Special Day</h3>
+          <p class="microcopy bigger">created with kara love, just for you</p>
+          <button id="readLetterBtn" class="btn btn-primary">read my letter</button>
+        </div>
+
+        <div class="side-gallery right">
+          <div class="gallery-column">
+            <img class="floating-photo" src="assets/fatima5.jpg" alt="Fatima 5" />
+            <img class="floating-photo" src="assets/fatima6.jpg" alt="Fatima 6" />
+            <img class="floating-photo" src="assets/fatima7.jpg" alt="Fatima 7" />
+            <img class="floating-photo" src="assets/fatima8.jpg" alt="Fatima 8" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" data-page="4" id="page4">
+      <div class="page-inner letter-page">
+        <h2 class="title page-title">Happy Birthday</h2>
+        <div class="letter-wrap">
+          <div class="letter-paper"></div>
+          <div class="letter-scroll">
+            <div id="typedLetter4" class="typed-letter"></div>
+          </div>
+        </div>
+        <button id="memoriesBtn" class="btn btn-primary hidden">Your Memories</button>
+      </div>
+    </section>
+
+    <section class="page" data-page="5" id="page5">
+      <div class="page-inner gallery-page">
+        <h2 class="title page-title">Your Memories</h2>
+        <div class="mosaic-wrap">
+          <div id="mosaic5" class="photo-mosaic">
+            <img class="memory-photo" src="assets/zahra1.jpg" alt="Zahra 1" />
+            <img class="memory-photo" src="assets/zahra2.jpg" alt="Zahra 2" />
+            <img class="memory-photo" src="assets/zahra3.jpg" alt="Zahra 3" />
+            <img class="memory-photo" src="assets/zahra4.jpg" alt="Zahra 4" />
+            <img class="memory-photo" src="assets/zahra5.jpg" alt="Zahra 5" />
+            <img class="memory-photo" src="assets/zahra6.jpg" alt="Zahra 6" />
+            <img class="memory-photo" src="assets/zahra7.jpg" alt="Zahra 7" />
+            <img class="memory-photo" src="assets/zahra8.jpg" alt="Zahra 8" />
+            <img class="memory-photo" src="assets/zahra9.jpg" alt="Zahra 9" />
+            <img class="memory-photo" src="assets/zahra10.jpg" alt="Zahra 10" />
+            <img class="memory-photo" src="assets/zahra11.jpg" alt="Zahra 11" />
+            <img class="memory-photo" src="assets/zahra12.jpg" alt="Zahra 12" />
+            <img class="memory-photo" src="assets/zahra13.jpg" alt="Zahra 13" />
+            <img class="memory-photo" src="assets/zahra14.jpg" alt="Zahra 14" />
+            <img class="memory-photo" src="assets/zahra15.jpg" alt="Zahra 15" />
+            <img class="memory-photo" src="assets/zahra16.jpg" alt="Zahra 16" />
+            <img class="memory-photo" src="assets/zahra17.jpg" alt="Zahra 17" />
+            <img class="memory-photo" src="assets/zahra18.jpg" alt="Zahra 18" />
+          </div>
+        </div>
+        <button id="watchVideoBtn" class="btn btn-primary">watch video</button>
+      </div>
+    </section>
+
+    <section class="page" data-page="6" id="page6">
+      <div class="page-inner video-page">
+        <h2 class="title page-title">A Moment For You</h2>
+        <div class="video-shell">
+          <video id="karaVideo" class="kara-video" src="assets/kara.mp4" playsinline preload="metadata"></video>
+          <button id="videoPlayBtn" class="video-play-btn" aria-label="Play video">
+            <span class="play-triangle"></span>
+          </button>
+        </div>
+        <button id="wishesBtn" class="btn btn-primary hidden">birthday wishes</button>
+      </div>
+    </section>
+
+    <section class="page" data-page="7" id="page7">
+      <div class="page-inner letter-page">
+        <h2 class="title page-title">Birthday Wishes</h2>
+        <div class="letter-wrap">
+          <div class="letter-paper"></div>
+          <div class="letter-scroll">
+            <div id="typedLetter7" class="typed-letter"></div>
+          </div>
+        </div>
+        <button id="giftsBtn" class="btn btn-primary hidden">I have gifts for you</button>
+      </div>
+    </section>
+
+    <section class="page" data-page="8" id="page8">
+      <div class="page-inner gift-page">
+        <h2 class="title page-title">Gifts for you</h2>
+
+        <div id="giftBox2" class="gift-box gift-box-large center-gift" role="button" tabindex="0" aria-label="Open gifts">
+          <div class="gift-shadow"></div>
+          <div class="gift-body"></div>
+          <div class="gift-ribbon gift-ribbon-v"></div>
+          <div class="gift-ribbon gift-ribbon-h"></div>
+          <div class="gift-lid"></div>
+          <div class="gift-sparkles"></div>
+        </div>
+
+        <div class="gift-reveal">
+          <img class="gift-card gift-card-1" src="assets/kaza1.jpg" alt="Gibhli Watch" />
+          <img class="gift-card gift-card-2" src="assets/kaza2.jpg" alt="Kaza" />
+        </div>
+
+        <button id="fromWhoBtn" class="btn btn-primary hidden">From Who?</button>
+      </div>
+    </section>
+
+    <section class="page" data-page="9" id="page9">
+      <div class="page-inner gallery-page">
+        <h2 class="title page-title">Eruyaaaaaaa</h2>
+        <div class="mosaic-wrap">
+          <div id="mosaic9" class="photo-mosaic photo-mosaic-small">
+            <img class="memory-photo" src="assets/eruya1.jpg" alt="Eruya 1" />
+            <img class="memory-photo" src="assets/eruya2.jpg" alt="Eruya 2" />
+            <img class="memory-photo" src="assets/eruya3.jpg" alt="Eruya 3" />
+            <img class="memory-photo" src="assets/eruya4.jpg" alt="Eruya 4" />
+            <img class="memory-photo" src="assets/eruya5.jpg" alt="Eruya 5" />
+            <img class="memory-photo" src="assets/eruya6.jpg" alt="Eruya 6" />
+            <img class="memory-photo" src="assets/eruya7.jpg" alt="Eruya 7" />
+            <img class="memory-photo" src="assets/eruya8.jpg" alt="Eruya 8" />
+          </div>
+        </div>
+        <button id="nextBtn9" class="btn btn-primary">next</button>
+      </div>
+    </section>
+
+    <section class="page" data-page="10" id="page10">
+      <div class="page-inner interlude-page">
+        <p class="eyebrow">one more little surprise</p>
+        <h2 class="title page-title">Almost There</h2>
+        <p class="microcopy bigger">Take a breath. The final frame is waiting.</p>
+        <button id="finalBtn" class="btn btn-primary">open final surprise</button>
+      </div>
+    </section>
+
+    <section class="page" data-page="11" id="page11">
+      <div class="page-inner final-page">
+        <div class="final-photo-shell">
+          <img src="assets/final.jpg" alt="Final photo" class="final-photo" />
+        </div>
+        <button id="homeBtn" class="btn btn-primary">back to home</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
